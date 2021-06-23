@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  font-size: 15px !important;
+  font-family: "Spartan", sans-serif !important;
+  background-color: var(--white, #fff);
+}
+
+#bg-pattern-top {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -75%;
+  left: 0px;
+  background-image: url(./images/bg-pattern-top-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+#bg-pattern-bottom {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  bottom: -20%;
+  background-image: url(./images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  width: 80%;
+  min-width: 950px;
+  display: grid;
+  grid-template-rows: repeat(2, calc(100% / 2));
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#header h1,
+.rated-text,
+.customer-name {
+  font-weight: 700;
+}
+
+#header p,
+.review,
+.attribution {
+  font-weight: 500;
+}
+
+#header {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-right: 4.5em;
+}
+
+#header h1 {
+  margin-top: 0px;
+  margin-bottom: 0.25em;
+  font-size: 3em;
+  color: var(--very-dark-magenta, darkmagenta);
+}
+
+#header p {
+  margin: 0em 0em 2.5em 0em;
+  color: var(--dark-grayish-magenta, mediumorchid);
+}
+
+#rated {
+  margin-bottom: 2.5em;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#rated figure {
+  margin: 0px;
+  background-color: var(--light-grayish-magenta, lightpink);
+  border-radius: 8px;
+  padding: 0.75em 0em 0.75em 1em;
+}
+
+#rated-reviews {
+  margin-right: 5em !important;
+}
+
+#rated-report-guru {
+  margin-right: 2.5em !important;
+  margin-left: 2.5em !important;
+}
+
+#rated-best-tech {
+  margin-left: 5em !important;
+}
+
+#rated span {
+  color: var(--very-dark-magenta, darkmagenta);
+  padding-left: 1em;
+}
+
+#customer-reviews {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.5em;
+  color: var(--white, #fff);
+}
+
+#section1-customer-review {
+  margin-bottom: 3em;
+}
+
+#section2-customer-review {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+#section3-customer-review {
+  margin-top: 3em;
+}
+
+#customer-reviews figure {
+  display: flex;
+}
+
+.sections-customer-review {
+  background-color: var(--very-dark-magenta, darkmagenta);
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.sections-customer-review figure {
+  margin: 0em 0em 2em 0em;
+}
+
+.sections-customer-review figcaption {
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.customer-photo {
+  border-radius: 50%;
+  width: 2.5em;
+  height: auto;
+}
+
+.customer-name,
+.customer-description,
+.review {
+  margin: 0px;
+}
+
+.customer-description {
+  font-weight: 400;
+  color: var(--soft-pink, hotpink);
+}
+
+.attribution {
+  margin-top: 3em;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  padding-bottom: 0.75em;
+  color: var(--dark-grayish-magenta, mediumorchid);
+  text-decoration: none;
+  border-bottom: solid 1px var(--dark-grayish-magenta, mediumorchid);
+}
+
+.attribution a:hover {
+  color: var(--very-dark-magenta, darkmagenta);
+  font-weight: 700;
+  border-bottom-width: 2px;
+  border-image: linear-gradient(
+      to right,
+      #501f50,
+      #743067,
+      #9b417d,
+      #c45492,
+      #ee67a4
+    )
+    1;
+}
+
+@media (max-width: 414px) {
+  body {
+    height: 100%;
+    width: 100vw;
+    overflow: visible;
+    font-size: 12px !important;
+  }
+
+  #bg-pattern-top {
+    background-image: url(./images/bg-pattern-top-mobile.svg);
+  }
+
+  #bg-pattern-bottom {
+    background-image: url(./images/bg-pattern-bottom-mobile.svg);
+  }
+
+  main {
+    padding: 3em 0em;
+  }
+
+  #content {
+    max-width: 90%;
+    min-width: 85%;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-columns: none;
+    grid-row-gap: 0.75em;
+  }
+
+  #header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0px;
+    text-align: center;
+  }
+
+  #rated {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #rated-reviews,
+  #rated-report-guru,
+  #rated-best-tech {
+    margin: 0em !important;
+  }
+
+  #rated figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #rated span {
+    padding-left: 0em;
+  }
+
+  #customer-reviews {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    grid-template-columns: none;
+    grid-column-gap: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 1.5em;
+  }
+
+  #section1-customer-review,
+  #section2-customer-review,
+  #section3-customer-review {
+    margin: 0em;
+  }
+}
